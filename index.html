@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>관용구 & 속담 사전 11,300개 검색</title>
+  <meta name="description" content="한국어 관용구와 속담 검색 사전" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-1xtfDUtn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-_iixKt64.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="app-header">
+      <button id="themeToggleBtn" class="top-theme-btn" title="다크 모드 전환">🌙</button>
+      <h1>📚 관용구 & 속담 검색</h1>
+    </header>
+
+    <div class="controls-card">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="단어, 속담을 검색하세요...">
+      </div>
+
+      <div class="dropdown-filters">
+        <div class="filter-group">
+          <label>구분</label>
+          <select id="typeFilter">
+            <option value="전체">전체</option>
+            <option value="속담">속담</option>
+            <option value="관용구">관용구</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>어원</label>
+          <select id="originFilter">
+            <option value="전체">전체</option>
+            <option value="순우리말">순우리말</option>
+            <option value="한자어">한자어</option>
+            <option value="외래어">외래어</option>
+            <option value="혼종어">혼종어</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>출력 개수</label>
+          <select id="perPageFilter">
+            <option value="10">10개씩 보기</option>
+            <option value="20">20개씩 보기</option>
+            <option value="30">30개씩 보기</option>
+            <option value="40">40개씩 보기</option>
+            <option value="50" selected>50개씩 보기</option>
+          </select>
+        </div>
+
+        <div class="action-group">
+          <button id="recentBtnToggle" class="recent-btn">📖 최근 본 어휘 <span id="recentBtnCount">(0)</span></button>
+        </div>
+      </div>
+
+      <div class="active-filters-container" id="activeFilters" style="display: none;">
+        <!-- JS populates filter chips -->
+      </div>
+
+      <div class="filter-section">
+        <div class="chosung-filters" id="chosungFilters">
+          <!-- JS populates -->
+        </div>
+      </div>
+    </div>
+
+    <main class="results-area">
+      <div class="status-bar">
+        <span id="status-text" class="status-text">데이터 준비 중...</span>
+      </div>
+
+      <!-- Table View -->
+      <div class="table-container">
+        <div class="table-header">
+          <div class="col-word">표제어</div>
+          <div class="col-type">구분</div>
+          <div class="col-origin">어원</div>
+          <div class="col-link">본문</div>
+        </div>
+        <div id="list-container" class="table-body">
+          <!-- JS populates -->
+        </div>
+        <!-- Pagination -->
+        <div id="pagination" class="pagination-container">
+          <!-- JS populates -->
+        </div>
+      </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; color: #6b7280; font-size: 0.85rem; border-top: 1px solid #e5e7eb; margin-top: 2rem;">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.0/kr/" target="_blank"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0; margin-bottom: 0.5rem;" src="https://i.creativecommons.org/l/by-sa/2.0/kr/88x31.png" /></a><br />
+      본 사이트의 데이터 및 콘텐츠는 <a rel="license" href="https://creativecommons.org/licenses/by-sa/2.0/kr/" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 500;">크리에이티브 커먼즈 저작자표시-동일조건변경허락 2.0 대한민국 라이선스</a>에 따라 이용할 수 있습니다.
+    </footer>
+  </div>
+
+  <!-- Recent Items Modal -->
+  <div id="recentModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>최근 본 어휘</h2>
+        <button id="closeModalBtn" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <ul id="recentListContainer" class="recent-modal-list">
+          <!-- JS populates -->
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button id="clearRecentBtn" class="danger-btn">기록 전체 삭제</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
